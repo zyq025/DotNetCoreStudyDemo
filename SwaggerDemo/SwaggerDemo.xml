@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwaggerDemo</name>
+    </assembly>
+    <members>
+        <member name="M:SwaggerDemo.Controllers.ProductController.AdminConfigProductData">
+            <summary>
+            管理员配置产品相关信息
+            </summary>
+        </member>
+        <member name="M:SwaggerDemo.Controllers.ProductController.MaintainProductInfo">
+            <summary>
+            维护员提交产品维护记录信息
+            </summary>
+        </member>
+        <member name="M:SwaggerDemo.Controllers.ProductController.UserProductInfo">
+            <summary>
+            用户访问产品信息
+            </summary>
+        </member>
+        <member name="T:SwaggerDemo.Controllers.UserController">
+            <summary>
+            用户API
+            </summary>
+        </member>
+        <member name="M:SwaggerDemo.Controllers.UserController.Login(TestSwaggerModel.UserConditon)">
+            <summary>
+            登录Api，传入用户名和密码
+            </summary>
+        </member>
+        <member name="M:SwaggerDemo.Controllers.UserController.GetUserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+        </member>
+        <member name="M:SwaggerDemo.Controllers.UserController.TestNoAuth">
+            <summary>
+            测试接口
+            </summary>
+        </member>
+        <member name="T:SwaggerDemo.Permission.PermissionHandler">
+            <summary>
+            权限处理的关键类
+            </summary>
+        </member>
+        <member name="F:SwaggerDemo.Permission.PermissionHandler._accessor">
+            <summary>
+            通过IHttpContextAccessor可以获取HttpContext相关信息，但一定要注册服务
+            </summary>
+        </member>
+        <member name="P:SwaggerDemo.Permission.PermissionHandler.Scheme">
+            <summary>
+            用于判断请求是否带有凭据和是否登录
+            </summary>
+        </member>
+        <member name="M:SwaggerDemo.Permission.PermissionHandler.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider)">
+            <summary>
+             构造函数注入
+            </summary>
+        </member>
+        <member name="T:SwaggerDemo.Permission.PermissionRequirement">
+            <summary>
+            资源数据的载体，可以根据需求自定义任何数据
+            需要实现IAuthorizationRequirement接口进行标识
+            </summary>
+        </member>
+        <member name="P:SwaggerDemo.Permission.PermissionRequirement.Permissions">
+            <summary>
+            存放系统中所有权限
+            </summary>
+        </member>
+        <member name="T:SwaggerDemo.Permission.PermissionData">
+            <summary>
+            定义了一个权限数据存储类，包含用户ID和对应的权限访问的Url地址
+            </summary>
+        </member>
+        <member name="P:SwaggerDemo.Permission.PermissionData.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:SwaggerDemo.Permission.PermissionData.Url">
+            <summary>
+            用户对应的 Url地址
+            </summary>
+        </member>
+    </members>
+</doc>

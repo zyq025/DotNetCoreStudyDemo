@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestSwaggerModel</name>
+    </assembly>
+    <members>
+        <member name="T:TestSwaggerModel.UserConditon">
+            <summary>
+            用户登录条件
+            </summary>
+        </member>
+        <member name="P:TestSwaggerModel.UserConditon.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:TestSwaggerModel.UserConditon.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:TestSwaggerModel.UserModel">
+            <summary>
+            返回的用户信息
+            </summary>
+        </member>
+        <member name="P:TestSwaggerModel.UserModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:TestSwaggerModel.UserModel.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:TestSwaggerModel.UserModel.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:TestSwaggerModel.UserModel.Addr">
+            <summary>
+            地址
+            </summary>
+        </member>
+    </members>
+</doc>
