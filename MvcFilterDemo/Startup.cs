@@ -28,10 +28,11 @@ namespace MvcFilterDemo
             services.AddControllers(config=> {
                 // 全局注册授权过滤器
                 config.Filters.Add(typeof(MyAuthorizeFilter));
+                // 全局注册资源过滤器
                 config.Filters.Add(typeof(MyResourceFilter));
-                config.Filters.Add(typeof(MyExceptionFilter));
-                config.Filters.Add(typeof(MyActionFilter));
-                config.Filters.Add(typeof(MyResultFilter));
+                //config.Filters.Add(typeof(MyExceptionFilter));
+                //config.Filters.Add(typeof(MyActionFilter));
+                //config.Filters.Add(typeof(MyResultFilter));
             });
         }
 
