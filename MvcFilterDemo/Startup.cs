@@ -30,9 +30,12 @@ namespace MvcFilterDemo
                 config.Filters.Add(typeof(MyAuthorizeFilter));
                 // 全局注册资源过滤器
                 config.Filters.Add(typeof(MyResourceFilter));
-                //config.Filters.Add(typeof(MyExceptionFilter));
-                //config.Filters.Add(typeof(MyActionFilter));
-                //config.Filters.Add(typeof(MyResultFilter));
+                // 全局注册异常过滤器
+                config.Filters.Add(typeof(MyExceptionFilter));
+                // 全局注册Action过滤器
+                config.Filters.Add(typeof(MyActionFilter));
+                // 全局注册Result过滤器
+                config.Filters.Add(typeof(MyResultFilter));
             });
         }
 

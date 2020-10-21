@@ -28,7 +28,8 @@ namespace MvcFilterDemo.Controllers
         {
 
             Console.WriteLine("======Action方法执行=======");
-            
+            //throw new Exception("Action抛出异常了");
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
