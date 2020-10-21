@@ -17,7 +17,7 @@ namespace MvcFilterDemo.Filters
             // context.RouteData  获取路由相关信息
             // context.HttpContext 拿到HttpContext 无所不能
             Console.WriteLine("OnResultExecuted方法执行");
-            throw new Exception("sd");
+            //throw new Exception("sd");
         }
 
         public void OnResultExecuting(ResultExecutingContext context)
@@ -25,7 +25,7 @@ namespace MvcFilterDemo.Filters
             // context.RouteData  获取路由相关信息
             // context.HttpContext 拿到HttpContext 无所不能
             Console.WriteLine("OnResultExecuting方法执行");
-            throw new Exception("sd1");
+            //throw new Exception("sd1");
 
         }
     }

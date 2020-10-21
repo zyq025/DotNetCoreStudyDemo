@@ -9,17 +9,16 @@ namespace MvcFilterDemo.Filters
     /// <summary>
     /// 继承Attribute可以进行特性标注，实现IActionFilter
     /// </summary>
-    public class MyActionFilter : Attribute, IActionFilter, IOrderedFilter
+    public class MyActionFilter2 : Attribute, IActionFilter, IOrderedFilter
     {
-        public int Order =>3;
+        public int Order { get; set; }
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
             // context.RouteData  获取路由相关信息
-            Console.WriteLine("OnActionExecuted方法执行");
+            Console.WriteLine("OnActionExecuted方法执行====action");
             //throw new Exception("OnActionExecuted方法有异常");
         }
-
         public void OnActionExecuting(ActionExecutingContext context)
         {
             // context.RouteData  获取路由相关信息
@@ -28,7 +27,7 @@ namespace MvcFilterDemo.Filters
             {
                 Console.WriteLine("OnActionExecuting参数不合法");
             }
-            Console.WriteLine("OnActionExecuting方法执行");
+            Console.WriteLine("OnActionExecuting方法执行====action");
             //throw new Exception("OnActionExecuting异常了");
         }
     }

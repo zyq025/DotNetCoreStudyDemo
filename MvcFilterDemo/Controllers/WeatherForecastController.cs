@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MvcFilterDemo.Filters;
 
 namespace MvcFilterDemo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [MyAuthorizeFilter]
+    [MyActionFilter1(Order =2)]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,12 +27,14 @@ namespace MvcFilterDemo.Controllers
         }
 
         [HttpGet]
+        //[MyActionFilter1]
+        //[MyActionFilter]
+        [MyActionFilter2(Order =1)]
         public IEnumerable<WeatherForecast> Get()
         {
 
             Console.WriteLine("======Action方法执行=======");
             //throw new Exception("Action抛出异常了");
-
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
