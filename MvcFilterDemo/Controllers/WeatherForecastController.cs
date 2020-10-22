@@ -30,6 +30,7 @@ namespace MvcFilterDemo.Controllers
         //[MyActionFilter1]
         //[MyActionFilter]
         [MyActionFilter2(Order =1)]
+        [MyFilterFactoryAttribute(typeof(MyNoAttributeActionFilter))]
         public IEnumerable<WeatherForecast> Get()
         {
 

@@ -34,9 +34,11 @@ namespace MvcFilterDemo
                 config.Filters.Add(typeof(MyExceptionFilter));
                 // 全局注册Action过滤器
                 config.Filters.Add(typeof(MyActionFilter),3);
+                //config.Filters.Add(typeof(MyNoAttributeActionFilter), 3);
                 // 全局注册Result过滤器
                 config.Filters.Add(typeof(MyResultFilter));
             });
+            services.AddTransient(typeof(MyNoAttributeActionFilter));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
