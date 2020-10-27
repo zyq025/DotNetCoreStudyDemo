@@ -5,9 +5,13 @@ using System.Text;
 
 namespace MediatorDemo.Colleague
 {
+    /// <summary>
+    /// 具体买房者1
+    /// </summary>
     public class HouseBuyer1:People
     {
-        public HouseBuyer1(HouseMediator mediator):base(mediator)
+        public HouseBuyer1(HouseMediator mediator)
+            :base(mediator)
         { }
 
         public void GetHouseMsg(string msg)

@@ -24,13 +24,13 @@ namespace MediatorDemo.Mediator
         // 通过发送消息
         public override void SendHouseMsg(string msg, People people)
         {
-            // 如果是卖房者发出房源
+            // 如果是卖房者发出房源,模拟买房者收到信息
             if(people==seller1||people==seller2)
             {
                 buyer1.GetHouseMsg(msg);
                 buyer2.GetHouseMsg(msg);
             }
-            else
+            else// 买房者发布购房信息，卖房者收到信息
             {
                 seller1.GetBuyHouseMsg(msg);
                 seller2.GetBuyHouseMsg(msg);
