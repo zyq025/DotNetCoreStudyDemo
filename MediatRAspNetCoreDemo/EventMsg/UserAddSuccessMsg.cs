@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MediatRAspNetCoreDemo.CommandMsg
+namespace MediatRAspNetCoreDemo.EventMsg
 {
-    public class UserAddMsg:IRequest<int>
+    public class UserAddSuccessMsg:INotification
     {
         public string UserName { get; set; }
-        public string UserAddr { get; set; }
+        public string UserPwd { get; set; }
     }
 }
