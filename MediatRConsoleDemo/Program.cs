@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MediatRConsoleDemo.NotificationMsg;
 using MediatRConsoleDemo.RequestMsg;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,10 +22,14 @@ namespace MediatRConsoleDemo
             var mediator = serviceProvider.GetService<IMediator>();
 
             // 通过容器发送请求消息，然后IRequestHandler根据消息类型进行处理
-             int nResponse = mediator.Send(new MyRequestMsg { RequestMsgType = "Request1" }).Result;
+            int nResponse = mediator.Send(new MyRequestMsg { RequestMsgType = "Request1" }).Result;
 
             Console.WriteLine($"Request消息处理完成!!!返回响应为{nResponse}");
+            
+            Console.WriteLine($"====================以下是通知消息测试==========================");
 
+            mediator.Publish(new MyNotificationMsg { MsgType = "Notification", MsgContent = "TestNotify" }).ConfigureAwait(false);
+            Console.WriteLine($"通知消息处理完成!!!");
         }
     }
 }
