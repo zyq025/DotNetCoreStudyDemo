@@ -27,7 +27,10 @@ namespace EFCoreTestDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<MyTestDbContext>(db => db.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EFCoreTest1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",b=>b.MigrationsAssembly("EFCoreTestDemo")));
+            services.AddDbContext<MyTestDbContext>(db => db.UseSqlServer(
+                @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EFCoreTest1;Integrated Security=True;
+                Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
+                b=>b.MigrationsAssembly("EFCoreTestDemo")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

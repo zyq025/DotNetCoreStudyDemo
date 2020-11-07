@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCoreTestDemo.Migrations
 {
     [DbContext(typeof(MyTestDbContext))]
-    [Migration("20201106085306_Inital1")]
-    partial class Inital1
+    [Migration("20201107081134_InitialName")]
+    partial class InitialName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
