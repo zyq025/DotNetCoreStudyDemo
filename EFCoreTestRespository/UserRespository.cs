@@ -31,15 +31,31 @@ namespace EFCoreTestRespository
 
         public int DeleteUser(string userId)
         {
-            _dbContext.Set<User>().Remove(new User() { Id = userId });
+            // 删除一个用户，生成包装对象
+            var tempUser = _dbContext.Set<User>().Remove(new User() { Id = userId });
+            // 删除多个用户用RemoveRange
             //_dbContext.Set<User>().RemoveRange(users);
+            // 根据状态进行删除提交操作
+            return _dbContext.SaveChanges();
+        }
+        public int UpdateUser(User user)
+        {
+            // 更新一个用户，生成包装对象
+            var tempUser =_dbContext.Set<User>().Update(user);
+            // 更新多个用户，用UpdateRange
+            //_dbContext.Set<User>().UpdateRange(users);
+            // 根据状态进行更新提交操作
             return _dbContext.SaveChanges();
         }
 
         public User GetUser()
         {
             // 方式1
-            //return _dbContext.Set<User>().Where(a => a.Id == "10000").FirstOrDefault();
+             _dbContext.Set<User>().Where(a => a.Id == "10000").FirstOrDefault();
+
+            // 使用AsNoTracking代表不追踪
+             _dbContext.Set<User>().AsNoTracking().Where(a => a.Id == "10000").FirstOrDefault();
+
             // 方式2 Linq , from、where、select是一个linq最基本的关键字，必须要
             var res = from u in _dbContext.Set<User>()
                       where u.Id == "10000"
@@ -48,11 +64,6 @@ namespace EFCoreTestRespository
             return res.FirstOrDefault();
         }
 
-        public int UpdateUser(User user)
-        {
-            _dbContext.Set<User>().Update(user);
-            //_dbContext.Set<User>().UpdateRange(users);
-            return _dbContext.SaveChanges();
-        }
+       
     }
 }
