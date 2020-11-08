@@ -27,5 +27,10 @@ namespace EFCoreTestModel
         /// 用户生日
         /// </summary>
         public DateTime UserBirth { get; set; }
+
+        /// <summary>
+        /// 年龄
+        /// </summary>
+        public string Age { get; set; }
     }
 }

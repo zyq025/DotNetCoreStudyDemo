@@ -4,14 +4,16 @@ using EFCoreTestRespository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCoreTestDemo.Migrations
 {
     [DbContext(typeof(MyTestDbContext))]
-    partial class MyTestDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201107152638_InitialName1")]
+    partial class InitialName1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,11 +24,7 @@ namespace EFCoreTestDemo.Migrations
             modelBuilder.Entity("EFCoreTestModel.User", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnName("ID")
-                        .HasColumnType("varchar(128)");
-
-                    b.Property<string>("Age")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserAddr")
                         .HasColumnType("nvarchar(max)");
@@ -35,19 +33,14 @@ namespace EFCoreTestDemo.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
-                        .HasColumnName("USER_NAME")
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserPwd")
-                        .IsRequired()
-                        .HasColumnName("USER_PWD")
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("SYS_USER");
-
-                    b.HasComment("用户表");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
