@@ -20,7 +20,12 @@ namespace EFCoreTestDemo
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    .ConfigureLogging((h,builder)=> {
+                        builder.SetMinimumLevel(LogLevel.Trace);
+                        builder.AddConsole();
+                        builder.AddDebug();
+                    });
                 });
     }
 }
